@@ -120,7 +120,7 @@ resource "aws_lb_listener" "backend" {
 }
 #ASG creation prerequisites : Launch Template
 resource "aws_launch_template" "lt" {
-  name = "lt"
+  name = "app-lt"
   image_id = "ami-0199ac7c9fbf9ed83"
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.lt_sg.id]
