@@ -124,7 +124,7 @@ resource "aws_launch_template" "lt" {
   image_id = "ami-0199ac7c9fbf9ed83"
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.lt_sg.id]
-  user_data_base64 = filebase64("/root/ALB/user_data.sh")
+  user_data = filebase64("/root/ALB/user_data.sh")
 }
 
 #ASG
