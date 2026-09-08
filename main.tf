@@ -92,6 +92,16 @@ resource "aws_lb_target_group" "tg" {
     name = "tg"
     port = 80 
     protocol = "HTTP"
+    health_check {
+    enabled             = true
+    healthy_threshold   = 3
+    unhealthy_threshold = 3
+    interval            = 30
+    timeout             = 5
+    path                = "/"
+    protocol            = "HTTP"
+    matcher             = "200-399"
+  }
     tags = {
       Name = "tg"
     }
